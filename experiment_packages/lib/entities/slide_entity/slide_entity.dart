@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'slide_entity.freezed.dart';
@@ -20,4 +21,20 @@ abstract class SlideEntity with _$SlideEntity {
 
   factory SlideEntity.fromJson(Map<String, dynamic> json) =>
       _$SlideEntityFromJson(json);
+
+  static SlideEntity fromFirestore(
+    DocumentSnapshot<Map<String, dynamic>> snapshot,
+    SnapshotOptions? options,
+  ) {
+    // TODO: handle edge cases
+    return SlideEntity.fromJson((snapshot.data()!));
+  }
+
+  static Map<String, Object?> toFirestore(
+    SlideEntity? value,
+    SetOptions? options,
+  ) {
+    // TODO: handle edge cases
+    return value!.toJson();
+  }
 }
