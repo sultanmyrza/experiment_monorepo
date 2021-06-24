@@ -1,7 +1,3 @@
 library experiment_packages;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'entities/entities.dart';
