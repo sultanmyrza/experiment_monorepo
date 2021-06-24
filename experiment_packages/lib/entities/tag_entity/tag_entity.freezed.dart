@@ -22,9 +22,9 @@ class _$TagEntityTearOff {
 
   _TagEntity call(
       {required String id,
-      required String text,
-      required String textColor,
-      required String chipColor}) {
+      String text = 'tag-name',
+      String textColor = '#45485C',
+      String chipColor = '#B1DDF6'}) {
     return _TagEntity(
       id: id,
       text: text,
@@ -148,19 +148,22 @@ class __$TagEntityCopyWithImpl<$Res> extends _$TagEntityCopyWithImpl<$Res>
 class _$_TagEntity implements _TagEntity {
   const _$_TagEntity(
       {required this.id,
-      required this.text,
-      required this.textColor,
-      required this.chipColor});
+      this.text = 'tag-name',
+      this.textColor = '#45485C',
+      this.chipColor = '#B1DDF6'});
 
   factory _$_TagEntity.fromJson(Map<String, dynamic> json) =>
       _$_$_TagEntityFromJson(json);
 
   @override
   final String id;
+  @JsonKey(defaultValue: 'tag-name')
   @override
   final String text;
+  @JsonKey(defaultValue: '#45485C')
   @override
   final String textColor;
+  @JsonKey(defaultValue: '#B1DDF6')
   @override
   final String chipColor;
 
@@ -207,9 +210,9 @@ class _$_TagEntity implements _TagEntity {
 abstract class _TagEntity implements TagEntity {
   const factory _TagEntity(
       {required String id,
-      required String text,
-      required String textColor,
-      required String chipColor}) = _$_TagEntity;
+      String text,
+      String textColor,
+      String chipColor}) = _$_TagEntity;
 
   factory _TagEntity.fromJson(Map<String, dynamic> json) =
       _$_TagEntity.fromJson;

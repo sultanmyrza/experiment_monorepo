@@ -6,9 +6,9 @@ part 'tag_entity.freezed.dart';
 abstract class TagEntity implements _$TagEntity {
   const factory TagEntity({
     required String id,
-    required String text,
-    required String textColor,
-    required String chipColor,
+    @Default('tag-name') String text,
+    @Default('#45485C') String textColor,
+    @Default('#B1DDF6') String chipColor,
   }) = _TagEntity;
 
   factory TagEntity.fromJson(Map<String, dynamic> json) =>
