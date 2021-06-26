@@ -18,4 +18,14 @@ class LessonRepository {
     var lessons = snapshot.docs.map((e) => e.data()).toList();
     return lessons;
   }
+
+  Future<LessonEntity> getOrCreateLesson({required String lessonId}) async {
+    var snapshot =
+        await _firestore.lessonsCollectionWithConverter().doc(lessonId).get();
+    var data = snapshot.data();
+
+    if (data != null) return data;
+
+    return LessonEntity.fresh(id: lessonId);
+  }
 }

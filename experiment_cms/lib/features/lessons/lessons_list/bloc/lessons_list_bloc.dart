@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
+
 import 'package:experiment_cms/features/lessons/lessons_list/models/models.dart';
 import 'package:experiment_packages/repositories/repositories.dart';
-import 'package:meta/meta.dart';
 
 part 'lessons_list_event.dart';
 part 'lessons_list_state.dart';
