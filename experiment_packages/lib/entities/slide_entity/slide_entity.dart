@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'slide_entity.freezed.dart';
+part 'slide_entity.g.dart';
 
 const _defaultText = "TODO: add slide text";
 const _defaultTextColor = '#FFFFFF';

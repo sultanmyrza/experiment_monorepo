@@ -1,9 +1,20 @@
-import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+const adminApp = admin.initializeApp(
+// TODO: add service account to run on prod env
+// {
+//   credential: admin.credential.cert(serviceAccount),
+// }
+);
+const firestore = adminApp.firestore();
+
+export const brainfoodUsersCollection = firestore.collection("brainfoodUsers");
+export const lessonsCollection = firestore.collection("lessons");
+export const slidesCollection = firestore.collection("slides");
+
+export const getCollection = (
+    collectionName: string
+): FirebaseFirestore.CollectionReference =>
+  firestore.collection(collectionName);
+
+export * from "./lessons/index";

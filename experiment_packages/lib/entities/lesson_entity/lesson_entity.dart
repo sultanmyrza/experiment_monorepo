@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'lesson_entity.freezed.dart';
+part 'lesson_entity.g.dart';
 
 const _defaultBlurHash = 'L8CExvoN00WU0wWV}woM0va{^BoK';
 

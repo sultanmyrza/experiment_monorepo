@@ -7,7 +7,9 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "build-functions-watch": "tsc -w",
+    "start-firestore-functions-auth-storage-with-import-export-data-local-dev": "firebase emulators:start --only firestore,functions,auth,storage --import=../firebase-fixtures/local-dev --export-on-exit=../firebase-fixtures/local-dev --inspect-functions"
   },
   "engines": {
     "node": "14"
@@ -24,6 +26,8 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.0",
     "firebase-functions-test": "^0.2.0",
+    "prettier": "^2.3.2",
+    "prettier-eslint": "^12.0.0",
     "typescript": "^3.8.0"
   },
   "private": true
